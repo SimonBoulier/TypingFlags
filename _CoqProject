@@ -4,6 +4,7 @@
 theories/Loader.v
 theories/Demo.v
 theories/BreadthFirst.v
+theories/SameFringe.v
 
 src/typing_flags_main.ml
 src/typing_flags_main.mli
