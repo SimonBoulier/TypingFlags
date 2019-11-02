@@ -2,14 +2,18 @@ _Typing Flags_ is a Coq plugin to disable positivity check, guard check and term
 
 Disabling those checks leads of course to inconsistencies, use it at your own risks ...
 
-This plugin is not perfect but it does the job. A better integration in Coq should arrive at some point.
+This plugin is not perfect but it does the job. A better version will be integrated in Coq 8.11.
+
+Tested with coq 8.6, 8.7, 8.8, 8.9.
 
 
 
 Usage
 =====
 
-This plugin provides the following commands:
+Load the plugin with `From TypingFlags Require Import Loader.`.
+
+Then, the plugin provides the following commands:
 
 - `Set Type In Type`
   Globally enable "type in type", meaning that all "Type@{i}" are convertible. Prop and Set remain distinct.
@@ -32,6 +36,16 @@ The `Print Assumptions` command keeps track of which definition and inductives a
 Installation
 ============
 
+With OPAM
+---------
+
+`opam install coq-typing-flags`
+
+Magic, isn't it? Thanks to @clarus for the package.
+
+Manually
+--------
+
 Run `make` to compile the plugin, it needs to have `coqc` available.
 
 Then, provided the repository theories of the plugin is in your load path, load it with:
@@ -41,8 +55,6 @@ Then, provided the repository theories of the plugin is in your load path, load 
 To copy the plugin in the contrib directory of your local installation of Coq, and thus make it always available simply run:
 
 `make install`
-
-Tested with coq 8.6, 8.7, 8.8, master June 2018.
 
 
 Examples
